@@ -1,0 +1,29 @@
+.books{
+    height: 200px;
+    width: 150px;
+    border: 1px solid black;
+}
+
+.table_books{
+    background-color: rgb(196, 235, 245);
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.table td{
+    padding: 20px;
+}
+
+@media all and (max-width: 479px) {
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+      display: block	;   
+      
+    }
+
+    
+}
