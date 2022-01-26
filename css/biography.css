@@ -1,0 +1,20 @@
+.img_left{
+    max-width: 300px;
+    max-height: 400px;
+    float: left;
+    position: relative;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.img_right{
+    max-width: 300px;
+    max-height: 400px;
+    float: right;
+    position: relative;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+
+
