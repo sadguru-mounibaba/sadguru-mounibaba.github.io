@@ -67,8 +67,8 @@
 
                 <br><br>  
                 
-                <button class="btn" style="margin-right: 20px;" id="btn_left"><i class="fa fa-toggle-left"></i></button>
-                <button class="btn" style="margin-left: 20px;" id="btn_right"><i class="fa fa-toggle-right"></i></button>
+                <button class="btn" style="margin-right: 20px; border: 0.1px solid gray;" id="btn_left">Click left <i class="fa fa-toggle-left"></i></button>
+                <button class="btn" style="margin-left: 20px; border: 0.1px solid gray;" id="btn_right"><i class="fa fa-toggle-right"></i> Click right</button>
 
                 <!-- Mounibaba Gallery -->
                 <div class="gallery" id="gallery_1">
@@ -904,6 +904,8 @@
         var MAX_VAL = 5
         var MIN_VAL = 1
 
+        document.getElementById("btn_left").disabled = true
+
         document.getElementById("gallery_2").style.display = "none"
         document.getElementById("gallery_3").style.display = "none"
         document.getElementById("gallery_4").style.display = "none"
@@ -911,8 +913,10 @@
 
 
         document.getElementById("btn_left").onclick = function(){
-            if( gallery_counter == MIN_VAL)
+            if( gallery_counter == MIN_VAL){
+                document.getElementById("btn_left").disabled = true
                 return
+            }
 
             var gallery_id = "gallery_" + gallery_counter
             document.getElementById(gallery_id).style.display = "none"
@@ -920,11 +924,16 @@
             gallery_counter = gallery_counter - 1
             gallery_id = "gallery_" + gallery_counter
             document.getElementById(gallery_id).style.display = "block"
+
+            document.getElementById("btn_left").disabled = false
+            document.getElementById("btn_right").disabled = false
         }
 
         document.getElementById("btn_right").onclick = function(){
-            if( gallery_counter == MAX_VAL)
+            if( gallery_counter == MAX_VAL){
+                document.getElementById("btn_right").disabled = true
                 return
+            }
             
             var gallery_id = "gallery_" + gallery_counter
             document.getElementById(gallery_id).style.display = "none"
@@ -932,6 +941,9 @@
             gallery_counter = gallery_counter + 1
             gallery_id = "gallery_" + gallery_counter
             document.getElementById(gallery_id).style.display = "block"
+
+            document.getElementById("btn_left").disabled = false
+            document.getElementById("btn_right").disabled = false
         }
 
     </script>
